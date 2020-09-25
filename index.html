@@ -2,34 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+     <!-- This is an SEO Change For responsive site-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This is an SEO Change that helps webpage to appear in search results-->
+    <meta name="description" content="Personal Budget monitoring application.">
+    <!-- This is an SEO Change that helps to follow and index the web page -->
+    <meta name=”robots” content="index, follow">
+    <!-- This is an SEO Change open graph meta tags to promote-->
+    <meta property="og:type" content="article" />
     <title>Personal Budget</title>
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./main.css">
+    <link rel="shortcut icon" href="./bg.png" alt="title image" />
 </head>
 <body>
    
     <div class="menu">
         <ul>
             <li><a href="./">Home</a></li>
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./login.html">Login</a></li>
-            <li><a href="https://google.com">Google</a></li>
+            <li><a href="./about.html" title="About">About</a></li>
+            <li><a href="./login.html" title="Login">Login</a></li>
+            <li><a href="https://google.com" title="Google">Google</a></li>
         </ul>
     </div>
-    <a class="skip-main" href="#mainid">Skip to main content</a>
-    <h1>Skip to Main Content - Keyboard Accessible</h1>
-     <div id="mainid" tabindex=-1>
-
-    <div class="hero" title="Hello">
+    <div>
+        <!-- This is an A11y Change which appears when narrator or screen reader is turned on and help to navigate to main content.-->
+         <a class="skip-main" href="#mainid">Skip to main content  </a>
+    </div>       
+     
+    <!-- This is an A11y Change title for image-->
+    <div class="hero" title="Personal budget image">
         <h1>Personal Budget</h1>
         <h2>A personal-budget management app</h2>
     </div>
+<!-- This is a Semantic HTML Change using header.-->
+        <header>
+            <p>Posted by Mounika</p>
+           </header>
 
-     <!-- This is a Semantic HTML Change -->
+     <!-- This is a Semantic HTML Change using aside semantic.-->
+     <div id="mainid" tabindex=-1>
      <div>
         <aside>
-            <p>The Epcot center is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+            <p> Features available in the Personal budget management app !!!</p>
             </aside> 
      </div>
      
@@ -37,9 +52,9 @@
     <div class="container center">
 
         <div class="page-area">
-
-            <div class="text-box">
-                <h1>Stay on track</h1>
+<!-- This is a A11y change using focus the block.-->
+            <div class="text-box" tabindex="0">
+                <h1 title="Stay on track">Stay on track</h1>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
                     you would get surprised! Proper budget management depends on real data... and this
@@ -47,14 +62,14 @@
                 </p>
             </div>
     
-            <div class="text-box">
+            <div class="text-box" tabindex="0">
                 <h1>Alerts</h1>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
             </div>
     
-            <div class="text-box">
+            <div class="text-box" tabindex="0">
                 <h1>Results</h1>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
@@ -63,14 +78,14 @@
                 </p>
             </div>
     
-            <div class="text-box">
+            <div class="text-box" tabindex="0">
                 <h1>Free</h1>
                 <p>
                     This app is free!!! And you are the only one holding your data!
                 </p>
             </div>
     
-            <div class="text-box">
+            <div class="text-box" tabindex="0">
                 <h1>Stay on track</h1>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
@@ -79,14 +94,14 @@
                 </p>
             </div>
     
-            <div class="text-box">
+            <div class="text-box" tabindex="0">
                 <h1>Alerts</h1>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
             </div>
     
-            <div class="text-box">
+            <div class="text-box" tabindex="0">
                 <h1>Results</h1>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
@@ -95,7 +110,7 @@
                 </p>
             </div>
     
-            <div class="text-box">
+            <div class="text-box" tabindex="0">
                 <h1>Free</h1>
                 <p>
                     This app is free!!! And you are the only one holding your data!
@@ -107,16 +122,9 @@
     </div>
 </div>
    
-    <div class="bottom">
-        <div class="center">
-            All rights reserved &copy; Fabio Nolasco
-        </div>
-    </div>
-
-
-    <!-- This is a Semantic HTML Change -->
+    <!-- This is a Semantic HTML Change Footer implementation -->
          <footer class="footerClass">
-        <p>Modified by: <a href="mailto:mramapur@uncc.edu">mramapur@uncc.edu</a></p>
-          </footer>
+            All rights reserved &copy; <a href="mailto:mramapur@uncc.edu">mramapur@uncc.edu</a>
+                  </footer>
 </body>
 </html>

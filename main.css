@@ -41,6 +41,7 @@ div.hero {
     height: 350px;
     background-color: #b4c6f0;
     background-image: url('./bg.png');
+    nav-index:-1;
     background-size: 400px;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -92,6 +93,9 @@ div.hero h2 {
 }
 .footerClass{
     text-align: center;
+    height: 50px;
+    background-color: #b4c6f0;
+    padding: 40px;
 }
 
 aside {
@@ -110,9 +114,15 @@ aside {
     top:auto;
     width:1px;
     height:1px;
-    overflow:hidden;
+     overflow:hidden;
     z-index:-999;
 }
+
+header{
+    text-align: right;
+    font-style: italic;
+}
+
 a.skip-main:focus, a.skip-main:active {
     color: #fff;
     background-color:#000;

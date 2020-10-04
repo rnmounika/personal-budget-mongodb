@@ -129,7 +129,8 @@
                 </p>
             
             <!-- <div class="text-box" tabindex="0"> -->
-                <h1 id="viz_area" >DJ3 Chart</h1>               
+                <h1>DJ3 Chart</h1>
+                <div id="viz_area" >DJ3 Chart</div>               
                    
                     <svg width="400" height="1"></svg>
                     <button class="randomize">randomize</button>
@@ -180,22 +181,27 @@
                            data : dataSource
                        });
                    }
+                   
                   function getBudget(){
+
+                    var list = [];
                       axios.get('/budget')
                       .then(function (res){
                        for(var i=0;i<res.data.myBudget.length;i++)
                        {
                            dataSource.datasets[0].data[i] =res.data.myBudget[i].budget;
-                           dataSource.labels[i]= res.data.myBudget[i].title;
-                           change(JsonData());
+                           dataSource.labels[i]= res.data.myBudget[i].title;                           
+                          
                        }
+                       change(JsonData());
                        createChart();
-                      });
+                       });                     
+                      
                   }
-                  getBudget();
-                   createChart();
-                   
-                   var svg = d3.select("#viz_area")
+                    getBudget();
+                  // createChart();
+                 
+ var svg = d3.select("#viz_area")
 	.append("svg")
 	.append("g")
 
@@ -230,47 +236,20 @@ var key = function(d){ return d.data.label; };
 
 var officers= dataSource.labels;
 var color = d3.scale.ordinal()
-	    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-    // var labs=[];
-    // function getBudget1(){
-    //                   axios.get('/budget')
-    //                   .then(function (res){
-    //                       //var values=[];
-                         
-    //                    for(var i=0;i<res.data.myBudget.length;i++)
-    //                    {
-    //                       // values[i] =res.data.myBudget[i].budget;
-    //                        labs[i]= res.data.myBudget[i].title;
-    //                     //    change(randomData1());
-    //                    }
-    //                    console.log(labs);
-                     
-    //                   });
-                      
-    //               }
-   
-   
-// officers.forEach(function (officer) {
-//     console.log(officer);
-//   officersIds.push(officer);
-// });
-
-
-// const officersIds = dataSource.labels.map(label => label);
-// console.log(officersIds);
-//myFunction();
+.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+       
 
 function randomData (){
-	var labels =color.domain();
-    	return labels.map(function(label){
+    var labels=color.domain() ;
+     	return labels.map(function(label){
 		return { label: label, value: Math.random() }
 	});
 }
 
 
 function JsonData (){
-    var label = dataSource.labels;     
-     var i=-1;
+    var label = dataSource.labels; 
+       var i=-1;
    return label.map(function(label){
         i++;
         return {label: label, value:  dataSource.datasets[0].data[i] }
@@ -284,9 +263,8 @@ d3.select(".randomize")
 		change(randomData());
 	});
 
-    change(randomData());
+  // change(randomData());
 function change(data) {
-console.log(data);
 	/* ------- PIE SLICES -------*/
 	var slice = svg.select(".slices").selectAll("path.slice")
 		.data(pie(data), key);

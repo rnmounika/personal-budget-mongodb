@@ -130,7 +130,7 @@
             
             <!-- <div class="text-box" tabindex="0"> -->
                 <h1>DJ3 Chart</h1>
-                <div id="viz_area" >DJ3 Chart</div>               
+                <div id="viz_area"></div>               
                    
                     <svg width="400" height="1"></svg>
                     <button class="randomize">randomize</button>
@@ -184,7 +184,6 @@
                    
                   function getBudget(){
 
-                    var list = [];
                       axios.get('/budget')
                       .then(function (res){
                        for(var i=0;i<res.data.myBudget.length;i++)
@@ -193,7 +192,9 @@
                            dataSource.labels[i]= res.data.myBudget[i].title;                           
                           
                        }
-                       change(JsonData());
+                       //As Data is not been accessible outside of this function (javascript promises) saving and sending data to change method from here
+                       var data =saveJsonData();
+                       change(data);
                        createChart();
                        });                     
                       
@@ -246,8 +247,8 @@ function randomData (){
 	});
 }
 
-
-function JsonData (){
+// Method to return input data for DJ3 chart title and budget data
+function saveJsonData (){
     var label = dataSource.labels; 
        var i=-1;
    return label.map(function(label){

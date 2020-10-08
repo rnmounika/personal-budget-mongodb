@@ -1,7 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port =3000;
-app.use('/',express.static('public'));
+
+app.use(cors());
+// app.use('/',express.static('public'));
 
  const budget =require('./body.json');
 // {myBudget: [
@@ -20,12 +23,14 @@ app.use('/',express.static('public'));
 
 // ]};
 
-app.get('/hello',(req, res) =>{
-    res.send('Hello World 1');
-});
+
+//Removing static content
+// app.get('/hello',(req, res) =>{
+//     res.send('Hello World 1');
+// });
 app.get('/budget',(req, res) =>{
     res.json(budget);
 });
 app.listen(port , () =>{
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`API servered at http://localhost:${port}`);
 });
